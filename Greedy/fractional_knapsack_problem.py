@@ -21,6 +21,7 @@ def fractional_knapsack_problem(pairs: "list[(int, int)]", W: int):
 
 if __name__ == '__main__':
     lst = [[120, 30], [100, 20], [60, 10]]
-    W = 50.0
+    W = 50
+    # should be [(1,60),(1,100), 2/3 120)]
     res = fractional_knapsack_problem(lst, W)
     print(res)
