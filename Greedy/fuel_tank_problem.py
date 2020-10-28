@@ -13,13 +13,15 @@ def fuel_tank_problem(lst: list, N: int) -> list:
     :return:
     """
     # lst.sort() # just if it's not sorted
+    if not lst or N < 0:
+        return []
     ans = [lst[0]]  # start point always will be part of the journey
-    for i in range(1, len(lst) - 1):
+    for i in range(1, len(lst)):
         # check if the next stop is too far from last stop
-        if lst[i + 1] - ans[-1] > N:
+        if i == len(lst) - 1 or lst[i + 1] - ans[-1] > N:
             ans.append(lst[i])
 
-    return ans + [lst[-1]]
+    return ans
 
 
 if __name__ == '__main__':
